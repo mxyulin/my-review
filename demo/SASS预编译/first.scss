@@ -1,0 +1,106 @@
+//变量声明
+$myFont: "Lucida Sans", "sans-serif";
+$white: #fff;
+$center: center;
+$light-blue: #33b5e5;
+$dark-blue: #155870;
+$purple: #9933cc;
+$ten-px: 10px;
+$zero: 0;
+//通用圆矩角混合器
+@mixin rounded-corners($boder-width) {
+  border-radius: $boder-width;
+  -moz-border-radius: $boder-width;
+  -webkit-border-raddius: $boder-width;
+}
+@mixin hover-link($bgcolor, $color) {
+  background-color: $bgcolor;
+  color: $color;
+  box-shadow: 0 1px 5px rgba($zero, $zero, $zero, .8); 
+}
+//初始样式指定
+* {
+  box: {
+    sizing: border-box;
+  }
+}
+html {
+   font: {
+     family: $myFont;
+    }
+}
+
+//内容样式指定
+body {
+  margin: $zero;
+  padding: $ten-px;
+  > .header {
+    @include rounded-corners(5px);
+    background: {
+      color: $purple;
+    }
+    color: $white;
+    padding: 20px 15px;
+  }
+  .container {
+    .menu > {
+      ul {
+        list: {
+          style: {
+            type: none;
+          }
+        }
+        margin: 0;
+        padding: 0;
+        > li {
+          @include rounded-corners(5px);
+          &:hover {
+            @include hover-link($dark-blue, #ccc)
+          }
+          background: {
+            color: $light-blue;
+          }
+          color: $white;
+          padding: $ten-px;
+          margin: {
+            bottom: 5px;
+          }
+          box: {
+            shadow: $zero 1px 3px rgba($zero, $zero, $zero, .5);
+          }
+        }
+      }
+    }
+    .side, .footer {
+      @include rounded-corners(5px);
+      background: {
+        color: $light-blue;
+      }
+      color: $white;
+      text: {
+        align: center;
+      }
+      padding: $ten-px;
+    }
+    // .footer {
+    //   background-color: $light-blue;
+    //   color: $white;
+    //   text-align: center;
+    // }
+  }
+}
+
+//指定浮动（通用）
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  width: 100%;
+}
+//清除浮动(通用）
+.clearfix::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+//引入媒体查询专用代码块
+@import "first-media";

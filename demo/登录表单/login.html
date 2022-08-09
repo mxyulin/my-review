@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+  <form action="" id="myForm" class="myForm container">
+    <h3>登录表单</h3>
+    <div class="form-control">
+      <label for="usr">用户名</label>
+      <input type="text" name="usr" id="usr" placeholder="请输入用户名" minlength="3" maxlength="15" required autofocus>
+      <span>错误信息</span>
+    </div>
+    <div class="form-control">
+      <label for="email">邮箱</label>
+      <input type="text" name="email" id="email" placeholder="请输入邮箱" required>
+      <span>错误信息</span>
+    </div>
+    <div class="form-control">
+      <label for="psw">密码</label>
+      <input type="password" name="psw" id="psw" placeholder="请输入密码" minlength="6" maxlength="25" required>
+      <span>错误信息</span>
+    </div>
+    <button type="submit">提交</button>
+  </form>
+  <script src="./login.js"></script>
+</body>
+</html>

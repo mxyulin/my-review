@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2 id="tab99"></h2>
+  <script>
+    function creat99tab() {
+      let tab = '';
+      for (let y = 1; y < 10; y++) {
+        for (let x = 1; x <= y; x++) {
+          tab += ` ( ${x} × ${y} = ${x*y} ) `;
+        }
+        tab += '<br/>'
+      }
+      return tab;
+    }
+    document.getElementById('tab99').innerHTML = creat99tab(); // HTML无法解析 /n 换行符
+  </script>
+</body>
+</html>
